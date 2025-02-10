@@ -123,7 +123,7 @@ def view(task, all):
 @click.argument('task', required=False, default="")
 def delete(task, all):
     """
-    [TASKNAME] [ENTRYNO] deletes a tasks entries by index.
+    [TASKNAME] deletes the previous entry.
     """
     tasks = load_data_from_csv(filepath)
 
