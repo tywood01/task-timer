@@ -13,7 +13,7 @@ You can do the following:
 ## Usage
 
 Commands:
-- `delete [TASKNAME] [ENTRYNO]`: Deletes a task's entries by index.
+- `delete [TASKNAME]`: Deletes a task's previous entry. You can use the --all flag to completely remove all time entries and the task.
 - `view [TASKNAME]`: Shows a summary of status and total time. If left blank, it will show all entries or you can use the `--all` flag.
 - `start [TASKNAME]`: Starts a task timer for a given task.
 - `stop [TASKNAME]`: Stops a task timer for a given task.
