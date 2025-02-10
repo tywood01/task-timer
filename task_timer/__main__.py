@@ -125,8 +125,21 @@ def delete(task, all):
     """
     [TASKNAME] [ENTRYNO] deletes a tasks entries by index.
     """
-    if click.confirm(click.style(f"WARNING:\nThis will delete entries for {task} are you sure?", fg=red, bold=True), abort=True):
-        del a[task]
+    tasks = load_data_from_csv(filepath)
+
+    if all:
+        if click.confirm(click.style(f"WARNING:\nThis will delete all entries for {task} are you sure?", fg=red, bold=True), abort=True):
+            tasks.pop(task, None) 
+            
+    else:
+        if click.confirm(click.style(f"WARNING:\nThis will delete the previous entry for {task} are you sure?", fg=red, bold=True), abort=True):
+            if running(tasks[task]):
+                tasks[task] = tasks[task][:-2]
+            else:
+                tasks[task] = tasks[task][:-1]
+
+    save_data_to_csv(tasks, filepath)
+
     return
 
 @main.command()
