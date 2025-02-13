@@ -18,3 +18,6 @@ Commands:
 - `start [TASKNAME]`: Starts a task timer for a given task.
 - `stop [TASKNAME]`: Stops a task timer for a given task.
 - `edit`: Uses the built-in text editor to manually edit the timesheet.
+
+## Contact
+Feel free to leave an isuee for additional improvements & extensions.
